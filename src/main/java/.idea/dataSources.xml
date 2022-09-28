@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:h2:tcp://localhost:9092/mini-market</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="Mini-market2" uuid="3d4ad2c1-0109-40d9-ba32-d4cb05cabea2">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://jdbc:postgresql://ec2-34-236-87-247.compute-1.amazonaws.com:5432/dafahgr1fd8l8o</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

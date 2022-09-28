@@ -1,29 +1,39 @@
 package BackendOnJava;
 
-import java.io.*;
-
 public class PalindromeChecker {
 
-    // Там холм лохмат - Tam xolm loxmaT
+    public static void main(String[] args) {
 
-    public static boolean isPalindrome(String str) {
-        String rev = "";
-        boolean ans = false;
-        for (int i = str.length() - 1; i >= 0; i--) {
-            rev = rev + str.charAt(i);
-        }
-        if (str.equals(rev)) {
-            ans = true;
-        }
-        return ans;
+        PalindromeChecker palindrome = new PalindromeChecker();
+
+        String input = "Tam xolm loxmaT";
+
+        if (palindrome.isPalindrome(input))
+            System.out.println("\"" + input + "\" is a palindrome.");
+        else
+            System.out.println("\"" + input + "\" is not a palindrome.");
+
     }
 
-    public static void main(String[] args)
-    {
-        String str = "TamxolmloxmaT";
+    public boolean isPalindrome(String input) {
 
-        str = str.toLowerCase();
-        boolean A = isPalindrome(str);
-        System.out.println(A);
-   }
+
+        input = input.toLowerCase().replaceAll("\\s+", "");
+
+
+        int length = input.length();
+
+
+        if (!input.matches("^([a-z0-9]+)?$")) {
+            return false;
+        }
+
+
+        for (int i = 0; i < length / 2; i++) {
+            if (input.charAt(i) != input.charAt(length - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
